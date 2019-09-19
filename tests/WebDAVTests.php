@@ -3,8 +3,10 @@
 use League\Flysystem\Config;
 use League\Flysystem\Filesystem;
 use League\Flysystem\WebDAV\WebDAVAdapter;
+use PHPUnit\Framework\TestCase;
 
-class WebDAVTests extends PHPUnit_Framework_TestCase
+
+class WebDAVTests extends TestCase
 {
     protected function getClient()
     {
@@ -458,5 +460,10 @@ class WebDAVTests extends PHPUnit_Framework_TestCase
         $adapter = new WebDAVAdapter($clientMock, 'prefix', false);
         $result = $adapter->copy('file.txt', 'newFile.txt');
         $this->assertTrue($result);
+    }
+
+    public function tearDown()
+    {
+        \Mockery::close();
     }
 }

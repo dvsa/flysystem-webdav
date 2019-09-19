@@ -8,7 +8,7 @@
          convertWarningsToExceptions="true"
          processIsolation="false"
          stopOnFailure="true"
-         syntaxCheck="true"
+
 >
     <php>
         <ini name="memory_limit" value="128M" />
